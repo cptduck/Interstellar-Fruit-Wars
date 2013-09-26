@@ -16,6 +16,7 @@ public class MainMenu extends BasicGameState {
 	/* Enter State IDs */
 	public static int Play = 1;
 	public static int Help = 2;
+	public static int About = 3;
 	
 	/* Exit */
 	public static int Exit = 0;
@@ -46,6 +47,10 @@ public class MainMenu extends BasicGameState {
 		/* Quit */
 		g.drawString(Strings.Quit, 365, 460);
 		g.drawRect(285, 446, 205, 44);
+		
+		/* About */
+		g.drawString("About", 66, 560);
+		g.drawRect(25, 548, 128, 44);
 		
 		/** Debug Settings */
 		g.drawString(DebugSettings, 640, 10);
@@ -90,6 +95,15 @@ public class MainMenu extends BasicGameState {
 			if (inp.isMousePressed(LeftClick)) {
 				
 				System.exit(Exit);
+			}
+		}
+		
+		/* About */
+		if ((xPos > 25 && xPos < 102) && (yPos > 57 && yPos < 101)) {
+			
+			if (inp.isMousePressed(LeftClick)) {
+				
+				sbg.enterState(About);
 			}
 		}
 	}
