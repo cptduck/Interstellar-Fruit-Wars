@@ -8,6 +8,8 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.state.transition.FadeInTransition;
+import org.newdawn.slick.state.transition.FadeOutTransition;
 
 import com.ken.game.spacefruit.vars.Strings;
 
@@ -76,7 +78,7 @@ public class MainMenu extends BasicGameState {
 			
 			if (inp.isMousePressed(LeftClick)) {
 				
-				sbg.enterState(Play);
+				sbg.enterState(Play, new FadeOutTransition(), new FadeInTransition());
 			}
 		}
 		
@@ -85,7 +87,7 @@ public class MainMenu extends BasicGameState {
 			
 			if (inp.isMousePressed(LeftClick)) {
 				
-				sbg.enterState(Help);
+				sbg.enterState(Help, new FadeOutTransition(), new FadeInTransition());
 			}
 		}
 		
@@ -94,7 +96,7 @@ public class MainMenu extends BasicGameState {
 			
 			if (inp.isMousePressed(LeftClick)) {
 				
-				System.exit(Exit);
+				System.exit(0);
 			}
 		}
 		
@@ -103,7 +105,7 @@ public class MainMenu extends BasicGameState {
 			
 			if (inp.isMousePressed(LeftClick)) {
 				
-				sbg.enterState(About);
+				sbg.enterState(About, new FadeOutTransition(), new FadeInTransition());
 			}
 		}
 	}
