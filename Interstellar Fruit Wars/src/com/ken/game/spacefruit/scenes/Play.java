@@ -8,6 +8,8 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import com.ken.game.spacefruit.vars.Strings;
+
 public class Play extends BasicGameState {
 
 	/* State IDs */
@@ -19,7 +21,7 @@ public class Play extends BasicGameState {
 	@Override
 	public void render(GameContainer gc, StateBasedGame sb, Graphics g)	throws SlickException {
 		
-		/* Game Background Images */
+		g.drawImage(new Image(Strings.GameBackground), 0, 0);
 	}
 
 	@Override
@@ -32,6 +34,5 @@ public class Play extends BasicGameState {
 	public int getID() {
 		
 		return 1;
-	
 	}
 }

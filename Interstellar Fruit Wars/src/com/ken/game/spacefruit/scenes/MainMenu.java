@@ -1,5 +1,6 @@
 package com.ken.game.spacefruit.scenes;
 
+import org.lwjgl.input.Mouse;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -14,26 +15,83 @@ public class MainMenu extends BasicGameState {
 
 	/* Enter State IDs */
 	public static int Play = 1;
+	public static int Help = 2;
+	
+	/* Exit */
+	public static int Exit = 0;
+	
+	/* Strings */
+	public static String MouseDebug = "- No Input";
+	public static String DebugSettings = "Debug Settings :";
 	
 	@Override
-	public void init(GameContainer gc, StateBasedGame sb)	throws SlickException {}
+	public void init(GameContainer gc, StateBasedGame sbg)	throws SlickException {}
 
 	@Override
-	public void render(GameContainer gc, StateBasedGame sb, Graphics g)	throws SlickException {
+	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)	throws SlickException {
 		
+		int xPos = Mouse.getX();
+		int yPos = Mouse.getY();
+		
+		/* Main Menu */
+		g.drawImage(new Image(Strings.GameBackground), 0, 0);
 		g.drawImage(new Image(Strings.GameTitle), 20, 60);
 		g.drawString(Strings.Play, 300, 280);
+		g.drawRect(285, 266, 205, 44);
+		
+		/* Help Menu */
+		g.drawString(Strings.Help, 365, 370);
+		g.drawRect(285, 356, 205, 44);
+		
+		/* Quit */
+		g.drawString(Strings.Quit, 365, 460);
+		g.drawRect(285, 446, 205, 44);
+		
+		/** Debug Settings */
+		g.drawString(DebugSettings, 640, 10);
+		
+		/* Mouse Debug */
+		g.drawString(MouseDebug, 520, 40);
+		
+		MouseDebug = "Mouse Position X : " + xPos + " Y : " + yPos;
 	}
 
 	@Override
-	public void update(GameContainer gc, StateBasedGame sb, int alpha)	throws SlickException {
+	public void update(GameContainer gc, StateBasedGame sbg, int alpha)	throws SlickException {
+		
+		int xPos = Mouse.getX();
+		int yPos = Mouse.getY();
+		
+		int LeftClick = Input.MOUSE_LEFT_BUTTON;
 		
 		Input inp = gc.getInput();
 		
-		if (inp.isKeyPressed(Input.KEY_SPACE)) {
+		/* Start Game */
+		if ((xPos > 285 && xPos < 490) && (yPos > 341 && yPos < 383)) {
 			
-			sb.enterState(Play);	
-		}	
+			if (inp.isMousePressed(LeftClick)) {
+				
+				sbg.enterState(Play);
+			}
+		}
+		
+		/* Help Menu */
+		if ((xPos > 285 && xPos < 490) && (yPos > 250 && yPos < 294)) {
+			
+			if (inp.isMousePressed(LeftClick)) {
+				
+				sbg.enterState(Help);
+			}
+		}
+		
+		/* Quit */
+		if ((xPos > 285 && xPos < 490) && (yPos > 159 && yPos < 203)) {
+			
+			if (inp.isMousePressed(LeftClick)) {
+				
+				System.exit(Exit);
+			}
+		}
 	}
 	
 	@Override
