@@ -21,42 +21,35 @@ public class Game extends StateBasedGame {
 		
 		this.addState(new MainMenu());
 		this.addState(new Play());
-		
 	}
 
 	@Override
 	public void initStatesList(GameContainer gc) throws SlickException {
 		
-		/* Init Startup state*/
+		/* Initialise Start State */
 		this.getState(Main_Menu).init(gc, this);
 		
 		/* Enter state */
 		this.enterState(Main_Menu);
-		
-		
 	}
 	
 	public static void main(String[] args) {
 		
 		AppGameContainer appgc;
 		
-		/* Starts game and sets container size and etc */
-		
 		try {
 			
 			appgc = new AppGameContainer(new Game(gTitle));
+			
+			/* Settings */
 			appgc.setDisplayMode(800, 650, false);
 			appgc.setShowFPS(false);
+			
 			appgc.start();
 			
 		} catch(SlickException se) {
 			
 			se.printStackTrace();
-			
-		}
-		
+		}	
 	}
-	
-	
-
 }

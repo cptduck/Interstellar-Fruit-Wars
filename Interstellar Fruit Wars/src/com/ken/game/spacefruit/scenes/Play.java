@@ -10,30 +10,22 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class Play extends BasicGameState {
 
-	/* Enter State IDs */
+	/* State IDs */
 	public static int GameOver = 2;
 	
-	
 	@Override
-	public void init(GameContainer gc, StateBasedGame sb)	throws SlickException {
-		
-		/* Prints to console which state was entered */
-		System.out.println("State Entered: Play");
-		
-	}
+	public void init(GameContainer gc, StateBasedGame sb)	throws SlickException {}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sb, Graphics g)	throws SlickException {
 		
-		/* Game Background images */
-		
+		/* Game Background Images */
 	}
 
 	@Override
 	public void update(GameContainer gc, StateBasedGame sb, int alpha)	throws SlickException {
 		
 		Input inp = gc.getInput();
-		
 	}
 
 	@Override
@@ -42,6 +34,4 @@ public class Play extends BasicGameState {
 		return 1;
 	
 	}
-
-
 }

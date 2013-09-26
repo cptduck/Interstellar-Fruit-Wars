@@ -8,24 +8,21 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
+import com.ken.game.spacefruit.vars.Strings;
+
 public class MainMenu extends BasicGameState {
 
 	/* Enter State IDs */
 	public static int Play = 1;
 	
 	@Override
-	public void init(GameContainer gc, StateBasedGame sb)	throws SlickException {
-		
-		/* Prints to console which state was entered */
-		System.out.println("State Entered: Main Menu");
-		
-	}
+	public void init(GameContainer gc, StateBasedGame sb)	throws SlickException {}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sb, Graphics g)	throws SlickException {
 		
-		g.drawImage(new Image("res\\title.png"), 20, 60);
-		g.drawString("Press 'SPACE' to play", 300, 280);
+		g.drawImage(new Image(Strings.GameTitle), 20, 60);
+		g.drawString(Strings.Play, 300, 280);
 	}
 
 	@Override
@@ -33,19 +30,15 @@ public class MainMenu extends BasicGameState {
 		
 		Input inp = gc.getInput();
 		
-		if (inp.isKeyPressed(inp.KEY_SPACE)) {
+		if (inp.isKeyPressed(Input.KEY_SPACE)) {
 			
-			sb.enterState(Play);
-			
-		}
-		
+			sb.enterState(Play);	
+		}	
 	}
-
+	
 	@Override
 	public int getID() {
 		
 		return 0;
-	
 	}
-
 }
