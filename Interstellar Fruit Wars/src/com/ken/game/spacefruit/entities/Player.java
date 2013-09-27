@@ -24,13 +24,13 @@ public class Player extends Entity {
 	
 	/** Player Settings */
 	private int MOVE_SPEED = 1;
-	private int currentHealth;
+	private int currentHealth = 100;
 	
 	public Player(int x, int y) {
 		
 		super(x, y, 8, 20);
 		
-		this.currentHealth = 100;
+		this.currentHealth = 1;
 		this.x = x;
 		this.y = y;
 	}
