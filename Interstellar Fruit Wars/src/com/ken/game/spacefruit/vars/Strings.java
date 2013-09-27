@@ -12,4 +12,8 @@ public class Strings {
 	public static String Play = "   Click to Play";
 	public static String Help = "Help";
 	public static String Quit = "Quit";
+	
+	/** Mouse Debug */
+	public static String MouseDebug = "- No Input";
+	public static String DebugSettings = "Debug Settings :";
 }

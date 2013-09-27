@@ -16,10 +16,14 @@ public class HelpMenu extends BasicGameState {
 	public static String MouseDebug = "- No Input";
 	public static String DebugSettings = "Debug Settings :";
 	
+	/* Mouse Clicks */
+	public static int LeftClick = Input.MOUSE_LEFT_BUTTON;
+	
+	/* State IDS */
+	public static int MainMenu = 0;
+	
 	@Override
-	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {
-		
-	}
+	public void init(GameContainer gc, StateBasedGame sbg) throws SlickException {}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
@@ -53,8 +57,6 @@ public class HelpMenu extends BasicGameState {
 	@Override
 	public void update(GameContainer gc, StateBasedGame sbg, int arg2) throws SlickException {
 		
-		int LeftClick = Input.MOUSE_LEFT_BUTTON;
-		
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
 		
@@ -64,7 +66,7 @@ public class HelpMenu extends BasicGameState {
 			
 			if(input.isMousePressed(LeftClick)) {
 				
-				sbg.enterState(0, new FadeOutTransition(), new FadeInTransition());
+				sbg.enterState(MainMenu, new FadeOutTransition(), new FadeInTransition());
 			}
 		}
 	}

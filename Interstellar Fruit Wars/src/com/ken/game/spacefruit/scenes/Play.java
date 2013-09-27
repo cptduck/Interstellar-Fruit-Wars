@@ -42,9 +42,6 @@ public class Play extends BasicGameState {
 		
 		/* Update Player */
 		player.update(gc, sbg, alpha);
-		
-		Input inp = gc.getInput();
-		
 	}
 
 	@Override

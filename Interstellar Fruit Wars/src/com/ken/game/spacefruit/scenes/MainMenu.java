@@ -20,12 +20,11 @@ public class MainMenu extends BasicGameState {
 	public static int Help = 2;
 	public static int About = 3;
 	
+	/* Mouse Clicks */
+	public static int LeftClick = Input.MOUSE_LEFT_BUTTON;
+	
 	/* Exit */
 	public static int Exit = 0;
-	
-	/* Strings */
-	public static String MouseDebug = "- No Input";
-	public static String DebugSettings = "Debug Settings :";
 	
 	@Override
 	public void init(GameContainer gc, StateBasedGame sbg)	throws SlickException {}
@@ -55,12 +54,12 @@ public class MainMenu extends BasicGameState {
 		g.drawRect(25, 548, 128, 44);
 		
 		/** Debug Settings */
-		g.drawString(DebugSettings, 640, 10);
+		g.drawString(Strings.DebugSettings, 640, 10);
 		
 		/* Mouse Debug */
-		g.drawString(MouseDebug, 520, 40);
+		g.drawString(Strings.MouseDebug, 520, 40);
 		
-		MouseDebug = "Mouse Position X : " + xPos + " Y : " + yPos;
+		Strings.MouseDebug = "Mouse Position X : " + xPos + " Y : " + yPos;
 	}
 
 	@Override
@@ -68,8 +67,6 @@ public class MainMenu extends BasicGameState {
 		
 		int xPos = Mouse.getX();
 		int yPos = Mouse.getY();
-		
-		int LeftClick = Input.MOUSE_LEFT_BUTTON;
 		
 		Input inp = gc.getInput();
 		

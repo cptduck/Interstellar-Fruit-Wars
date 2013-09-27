@@ -10,11 +10,9 @@ import org.newdawn.slick.state.StateBasedGame;
 import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
-public class About extends BasicGameState {
+import com.ken.game.spacefruit.vars.Strings;
 
-	/* Strings */
-	public static String MouseDebug = "- No Input";
-	public static String DebugSettings = "Debug Settings :";
+public class About extends BasicGameState {
 	
 	@Override
 	public void init(GameContainer arg0, StateBasedGame sbg) throws SlickException {}
@@ -40,12 +38,12 @@ public class About extends BasicGameState {
 		g.drawRect(645, 535, 135, 44);
 		
 		/** Debug Settings */
-		g.drawString(DebugSettings, 640, 10);
+		g.drawString(Strings.DebugSettings, 640, 10);
 		
 		/* Mouse Debug */
-		g.drawString(MouseDebug, 520, 40);
+		g.drawString(Strings.MouseDebug, 520, 40);
 		
-		MouseDebug = "Mouse Position X : " + xPos + " Y : " + yPos;
+		Strings.MouseDebug = "Mouse Position X : " + xPos + " Y : " + yPos;
 	}
 
 	@Override
