@@ -18,6 +18,8 @@ public class Player extends Entity {
 	private static final int Backwards = Input.KEY_A;
 	private static final int Upwards = Input.KEY_W;
 	private static final int Downwards = Input.KEY_S;
+	
+	/* Actions */
 	private static final int Fire = Input.KEY_SPACE;
 	
 	/* Debug Exit */
@@ -37,7 +39,6 @@ public class Player extends Entity {
 		this.currentHealth = 100;
 		this.x = x;
 		this.y = y;
-		
 	}
 	
 	@Override
@@ -52,11 +53,9 @@ public class Player extends Entity {
 		if (isFiring) {
 			
 			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
-			bulletX++;
-			bulletY++;
 			
+			bulletY--;
 		}
-		
 	}
 	
 	@Override
@@ -107,12 +106,10 @@ public class Player extends Entity {
 		
 		if (input.isKeyPressed(Fire)) {
 			
+			bulletX = x;
+			bulletY = y;
+			
 			isFiring = true;
-			bulletX = x++;
-			bulletY = y++;
-
-			
-			
 		}
 		
 		/** Debug Exit */
@@ -122,12 +119,6 @@ public class Player extends Entity {
 		}
 		
 		playerPos();
-	}
-	
-	public void fireBullet() {
-		
-		
-		
 	}
 	
 	public void playerPos() {
