@@ -55,9 +55,9 @@ public class Player extends Entity {
 			
 			x += MOVE_SPEED;
 			
-			if(x > 380) {
+			if(x > 370) {
 				
-				x -= 2;
+				x -= 1;
 			}
 		}
 		
@@ -65,7 +65,7 @@ public class Player extends Entity {
 			
 			x -= MOVE_SPEED;
 			
-			if(x < 8) {
+			if(x < 1) {
 				
 				x += 1;
 			}
@@ -75,9 +75,9 @@ public class Player extends Entity {
 			
 			y -= MOVE_SPEED;
 		
-			if(y < 10) {
+			if(y < 1) {
 				
-				y += 2;
+				y += 1;
 			}
 		}
 		
@@ -85,9 +85,9 @@ public class Player extends Entity {
 			
 			y += MOVE_SPEED;
 		
-			if(y > 276) {
+			if(y > 310) {
 				
-				y -= 2;
+				y -= 1;
 			}
 		}
 		
