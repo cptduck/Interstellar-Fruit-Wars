@@ -18,6 +18,7 @@ public class Player extends Entity {
 	private static final int Backwards = Input.KEY_A;
 	private static final int Upwards = Input.KEY_W;
 	private static final int Downwards = Input.KEY_S;
+	private static final int Fire = Input.KEY_SPACE;
 	
 	/* Debug Exit */
 	private static final int Exit = Input.KEY_ESCAPE;
@@ -25,6 +26,9 @@ public class Player extends Entity {
 	/** Player Settings */
 	private int MOVE_SPEED = 1;
 	private int currentHealth;
+	private int bulletX;
+	private int bulletY;
+	private boolean isFiring;
 	
 	public Player(int x, int y) {
 		
@@ -33,6 +37,7 @@ public class Player extends Entity {
 		this.currentHealth = 100;
 		this.x = x;
 		this.y = y;
+		
 	}
 	
 	@Override
@@ -43,6 +48,15 @@ public class Player extends Entity {
 		
 		g.scale(2, 2);
 		g.drawImage(new Image(Strings.Player), x, y);
+		
+		if (isFiring) {
+			
+			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
+			bulletX++;
+			bulletY++;
+			
+		}
+		
 	}
 	
 	@Override
@@ -91,6 +105,16 @@ public class Player extends Entity {
 			}
 		}
 		
+		if (input.isKeyPressed(Fire)) {
+			
+			isFiring = true;
+			bulletX = x++;
+			bulletY = y++;
+
+			
+			
+		}
+		
 		/** Debug Exit */
 		if(input.isKeyDown(Exit)) {
 			
@@ -98,6 +122,12 @@ public class Player extends Entity {
 		}
 		
 		playerPos();
+	}
+	
+	public void fireBullet() {
+		
+		
+		
 	}
 	
 	public void playerPos() {
