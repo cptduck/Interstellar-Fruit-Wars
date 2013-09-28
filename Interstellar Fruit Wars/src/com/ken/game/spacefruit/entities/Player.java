@@ -39,6 +39,7 @@ public class Player extends Entity {
 		this.y = y;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		this.x = playerX;
 		this.y = playerY;
 =======
@@ -46,6 +47,9 @@ public class Player extends Entity {
 		
 =======
 >>>>>>> parent of a32374e... Wp
+=======
+		
+>>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 	}
 	
 	@Override
@@ -69,9 +73,13 @@ public class Player extends Entity {
 >>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 =======
 			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
+<<<<<<< HEAD
 >>>>>>> parent of a32374e... Wp
+=======
+			bulletX++;
+			bulletY++;
+>>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 			
-			bulletY--;
 		}
 		
 	}
@@ -125,6 +133,7 @@ public class Player extends Entity {
 		if (input.isKeyPressed(Fire)) {
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			isFiring = true;
 <<<<<<< HEAD
 			Bullet.bulletY--;
@@ -139,7 +148,14 @@ public class Player extends Entity {
 			bulletY = y;
 >>>>>>> parent of a32374e... Wp
 			
+=======
+>>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 			isFiring = true;
+			bulletX = x++;
+			bulletY = y++;
+
+			
+			
 		}
 		
 		/** Debug Exit */
