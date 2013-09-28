@@ -24,11 +24,10 @@ public class About extends BasicGameState {
 		int yPos = Mouse.getY();
 		
 		/* Main MoreInfo */
-		g.drawString("About", 365, 8);
+		g.drawString("Help Menu", 365, 8);
 		g.drawString("Developers : ", 20, 120);
-		g.drawString(". Code : Carl ", 20, 150);
-		g.drawString(". Code : Ken", 20, 180);
-		g.drawString(". Graphics : Eons", 20, 210);
+		g.drawString(". Carl ", 20, 150);
+		g.drawString(". Ken", 20, 180);
 		
 		g.drawString("Built With :", 20, 420);
 		g.drawString(". Slick2D", 20, 450);

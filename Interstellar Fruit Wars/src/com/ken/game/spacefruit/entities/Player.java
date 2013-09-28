@@ -18,8 +18,6 @@ public class Player extends Entity {
 	private static final int Backwards = Input.KEY_A;
 	private static final int Upwards = Input.KEY_W;
 	private static final int Downwards = Input.KEY_S;
-	
-	/* Actions */
 	private static final int Fire = Input.KEY_SPACE;
 	
 	/* Debug Exit */
@@ -40,8 +38,11 @@ public class Player extends Entity {
 		this.currentHealth = 100;
 		this.x = x;
 		this.y = y;
+<<<<<<< HEAD
 		this.x = playerX;
 		this.y = playerY;
+=======
+>>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 		
 	}
 	
@@ -56,9 +57,16 @@ public class Player extends Entity {
 		
 		if (isFiring) {
 			
+<<<<<<< HEAD
 			Bullet.bulletY--;
+=======
+			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
+			bulletX++;
+			bulletY++;
+>>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 			
 		}
+		
 	}
 	
 	@Override
@@ -110,7 +118,14 @@ public class Player extends Entity {
 		if (input.isKeyPressed(Fire)) {
 			
 			isFiring = true;
+<<<<<<< HEAD
 			Bullet.bulletY--;
+=======
+			bulletX = x++;
+			bulletY = y++;
+
+			
+>>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 			
 		}
 		
@@ -121,6 +136,12 @@ public class Player extends Entity {
 		}
 		
 		playerPos();
+	}
+	
+	public void fireBullet() {
+		
+		
+		
 	}
 	
 	public void playerPos() {
