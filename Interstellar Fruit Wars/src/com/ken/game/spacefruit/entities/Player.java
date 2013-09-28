@@ -30,7 +30,8 @@ public class Player extends Entity {
 	private int currentHealth;
 	private int bulletX;
 	private int bulletY;
-	private boolean isFiring;
+	public static int playerX, playerY;
+	public static boolean isFiring;
 	
 	public Player(int x, int y) {
 		
@@ -39,6 +40,9 @@ public class Player extends Entity {
 		this.currentHealth = 100;
 		this.x = x;
 		this.y = y;
+		this.x = playerX;
+		this.y = playerY;
+		
 	}
 	
 	@Override
@@ -52,9 +56,8 @@ public class Player extends Entity {
 		
 		if (isFiring) {
 			
-			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
+			Bullet.bulletY--;
 			
-			bulletY--;
 		}
 	}
 	
@@ -106,10 +109,9 @@ public class Player extends Entity {
 		
 		if (input.isKeyPressed(Fire)) {
 			
-			bulletX = x;
-			bulletY = y;
-			
 			isFiring = true;
+			Bullet.bulletY--;
+			
 		}
 		
 		/** Debug Exit */
