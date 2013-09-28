@@ -37,19 +37,7 @@ public class Player extends Entity {
 		this.currentHealth = 100;
 		this.x = x;
 		this.y = y;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		this.x = playerX;
-		this.y = playerY;
-=======
->>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
-		
-=======
->>>>>>> parent of a32374e... Wp
-=======
-		
->>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
+
 	}
 	
 	@Override
@@ -62,24 +50,10 @@ public class Player extends Entity {
 		g.drawImage(new Image(Strings.Player), x, y);
 		
 		if (isFiring) {
-			
-<<<<<<< HEAD
-<<<<<<< HEAD
-			Bullet.bulletY--;
-=======
-			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
-			bulletX++;
-			bulletY++;
->>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
-=======
-			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
-<<<<<<< HEAD
->>>>>>> parent of a32374e... Wp
-=======
-			bulletX++;
-			bulletY++;
->>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
-			
+
+			g.drawImage(new Image(Strings.Bullet), bulletX + 8, bulletY);
+			bulletY--;
+		
 		}
 		
 	}
@@ -131,47 +105,24 @@ public class Player extends Entity {
 		}
 		
 		if (input.isKeyPressed(Fire)) {
-			
-<<<<<<< HEAD
-<<<<<<< HEAD
-			isFiring = true;
-<<<<<<< HEAD
-			Bullet.bulletY--;
-=======
-			bulletX = x++;
-			bulletY = y++;
 
-			
->>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
-=======
+			isFiring = true;
 			bulletX = x;
 			bulletY = y;
->>>>>>> parent of a32374e... Wp
-			
-=======
->>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
-			isFiring = true;
-			bulletX = x++;
-			bulletY = y++;
 
-			
-			
+	
 		}
 		
 		/** Debug Exit */
 		if(input.isKeyDown(Exit)) {
 			
 			sbg.enterState(0);
+			
 		}
 		
 		playerPos();
 	}
 	
-	public void fireBullet() {
-		
-		
-		
-	}
 	
 	public void playerPos() {
 		
