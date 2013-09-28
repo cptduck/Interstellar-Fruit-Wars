@@ -28,8 +28,7 @@ public class Player extends Entity {
 	private int currentHealth;
 	private int bulletX;
 	private int bulletY;
-	public static int playerX, playerY;
-	public static boolean isFiring;
+	private boolean isFiring;
 	
 	public Player(int x, int y) {
 		
@@ -39,11 +38,14 @@ public class Player extends Entity {
 		this.x = x;
 		this.y = y;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		this.x = playerX;
 		this.y = playerY;
 =======
 >>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
 		
+=======
+>>>>>>> parent of a32374e... Wp
 	}
 	
 	@Override
@@ -58,13 +60,18 @@ public class Player extends Entity {
 		if (isFiring) {
 			
 <<<<<<< HEAD
+<<<<<<< HEAD
 			Bullet.bulletY--;
 =======
 			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
 			bulletX++;
 			bulletY++;
 >>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
+=======
+			g.drawImage(new Image(Strings.Bullet), bulletX, bulletY);
+>>>>>>> parent of a32374e... Wp
 			
+			bulletY--;
 		}
 		
 	}
@@ -117,6 +124,7 @@ public class Player extends Entity {
 		
 		if (input.isKeyPressed(Fire)) {
 			
+<<<<<<< HEAD
 			isFiring = true;
 <<<<<<< HEAD
 			Bullet.bulletY--;
@@ -126,7 +134,12 @@ public class Player extends Entity {
 
 			
 >>>>>>> parent of 9b1980f... Clean Up (Again) | Fixed Bullets.
+=======
+			bulletX = x;
+			bulletY = y;
+>>>>>>> parent of a32374e... Wp
 			
+			isFiring = true;
 		}
 		
 		/** Debug Exit */
